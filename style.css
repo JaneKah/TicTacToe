@@ -1,3 +1,36 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.player-panel {
+    display: flex;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.player-panel img {
+    height: 60px;
+    width: 60px;
+    margin-right: 16px;
+}
+
+.player-panel div {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.player-inactive {
+    opacity: 0.5;
+}
+
 tr {
     width: 399px;
 }
@@ -41,6 +74,60 @@ table {
       right: 26px;
   }
 
+  .fields {
+      position: relative;
+  }
+
   .d-none {
       display: none;
+  }
+
+  .horizontal-line {
+      height: 10px;
+      width: 350px;
+      background-color: rgba(0,0,0,0.5);
+      position: absolute;
+      transform: scaleX(0.0);
+      transition: 225ms ease-in-out;
+
+  }
+
+  .make-vertical {
+      transform: rotate(90deg) scaleX(0.0);
+  }
+
+  .game-over {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+      animation: zoomIn 225ms ease-in-out;
+  }
+
+  @keyframes zoomIn {
+      from {
+          opacity: 0;
+          transform: scale(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+    }
+  }
+
+  .restart-btn {
+      border: 1px solid #1C087F;
+      background-color: #1C087F;
+      z-index: 999;
+      width: 300px;
+      height: 100px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+  }
+
+  .restart-btn:hover {
+      background-color: #391fb6;
   }
