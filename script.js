@@ -98,4 +98,15 @@ function checkForWin() {
             document.getElementById('restart-btn').classList.remove('d-none');
         }, 1500);       
     }
+
+    if (checkIfGameIsDraw()) {
+        setTimeout(function(){
+            document.getElementById('game-over').classList.remove('d-none');
+            document.getElementById('restart-btn').classList.remove('d-none');
+        }, 1500); 
+    }
+}
+
+function checkIfGameIsDraw() {
+    return GameDraw = (fields.filter(String).length == 9) ? true : false;
 }
