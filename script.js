@@ -2,8 +2,8 @@ let fields = [];
 let currentShape = 'cross';
 let gameOver = false;
 
-function fillShape(id) {
 
+function fillShape(id) {
     if (!fields[id] && !gameOver) {
         if (currentShape == 'cross') {
             currentShape = 'circle';
@@ -32,6 +32,7 @@ function draw() {
     }
 }
 
+
 function restart() {
     gameOver = false;
     fields = [];
@@ -40,7 +41,6 @@ function restart() {
     for (let i = 1; i < 9; i++) {
         document.getElementById('line-' + i).style.transform = 'scaleX(0)';
     }
-
     for (let i = 0; i < 9; i++) {
         document.getElementById('circle-' + i).classList.add('d-none');
         document.getElementById('cross-' + i).classList.add('d-none');
@@ -130,6 +130,7 @@ function showCircleAsWinner() {
     }, 1000);
 }
 
+
 function drawResult() {
     setTimeout(function () {
         document.getElementById('game-over').classList.remove('d-none');
@@ -137,6 +138,7 @@ function drawResult() {
         <button id="restart-btn" class="restart-btn" onclick="restart()">Restart</button>`;
     }, 1000);
 }
+
 
 function checkIfGameIsDraw() {
     return GameDraw = (fields.filter(String).length == 9) ? true : false;
