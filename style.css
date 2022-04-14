@@ -9,6 +9,10 @@ body {
     font-family: 'Changa', sans-serif;
 }
 
+.game-container {
+    position: relative;
+}
+
 .player-panel {
     display: flex;
     font-size: 32px;
@@ -61,6 +65,7 @@ td:hover::before {
 }
 
 table {
+    position: relative;
     border-collapse: collapse;
 }
 
@@ -94,7 +99,6 @@ table tr td:last-child {
 }
 
 .fields {
-    position: relative;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.4);
     box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
@@ -110,13 +114,12 @@ table tr td:last-child {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
     position: absolute;
-    transform: scaleX(0.0);
+    transform: scaleX(1.0);
     transition: 225ms ease-in-out;
-
 }
 
 .make-vertical {
-    transform: rotate(90deg) scaleX(0.0);
+    transform: rotate(90deg) scaleX(1.0);
 }
 
 .restart-btn {
@@ -176,7 +179,6 @@ table tr td:last-child {
     }
 }
 
-
 .game-over-window img {
     height: 60px;
     width: 60px;
@@ -188,5 +190,11 @@ table tr td:last-child {
     align-items: center;
     font-size: 32px;
     margin-bottom: 32px;
+}
 
+@media(max-width: 450px) {
+    body {
+        justify-content: flex-start;
+        overflow: hidden;
+    }
 }
