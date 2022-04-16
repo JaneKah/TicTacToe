@@ -2,7 +2,6 @@ let fields = [];
 let currentShape = 'cross';
 let gameOver = false;
 
-
 function fillShape(id) {
     if (!fields[id] && !gameOver) {
         if (currentShape == 'cross') {
