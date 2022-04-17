@@ -194,7 +194,7 @@ table tr td:last-child {
 
 @media(max-width: 450px) {
     body {
-        align-items: flex-start;
+        align-items: center;
         overflow: hidden;
     }
 
